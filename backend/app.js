@@ -6,7 +6,7 @@ import register from "./models/register";
 const app=express();
 app.use(bodyParser.json())
 app.use(cors())
-mongoose.connect('mongodb+srv://vasavi_08:CD2tUlqHEGo0KAQH@cluster0.yhpakpu.mongodb.net/DriveReady?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://vasavi_08:<password>@cluster0.yhpakpu.mongodb.net/?retryWrites=true&w=majority')
 .then(()=> app.listen(5001))
 .then(()=>console.log("Connected to Database & Listening to localhost 5001"))
 .catch((err)=>console.log(err));
