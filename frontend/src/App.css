@@ -1,5 +1,7 @@
 .main{
     background-image: linear-gradient(155deg,rgb(8, 127, 160),rgb(120, 0, 176));
+    background-image: url('images/bg.jpg');
+    background-size: cover;
 }
 .login{
     position: relative;
@@ -19,7 +21,7 @@
     color: white;
     background-color:transparent;
     padding: 30px;
-    box-shadow: 0px 1px 5px white;
+    box-shadow: 2px 2px 5px white,inset 2px 2px 5px white;
   }
   input{
     border: none;
@@ -32,7 +34,7 @@
     color: white;
   }
   ::placeholder{
-    color: rgb(210, 220, 241);
+    color: rgb(229, 233, 244);
     font-size: small;
   }
   .header{
@@ -44,10 +46,12 @@
   }
   .btn{
     padding:2px 5px;
-    background-image: linear-gradient(135deg,rgb(110, 11, 155),rgb(14, 125, 156));
+    /* background-image: linear-gradient(45deg,rgb(151, 45, 200),rgb(37, 153, 185)); */
+    background-color: rgb(158, 96, 215);
     color: white !important;
   }
   .btn:hover{
+    background-color: rgb(158, 96, 215);
     transform: scale(1.05);
   }
   p{
@@ -55,7 +59,7 @@
     
   }
   a{
-    color: rgb(90, 218, 241);
+    color: rgb(0, 247, 255);
     text-decoration:none;
-    font-weight: 500;
+    font-weight: 700;
   }

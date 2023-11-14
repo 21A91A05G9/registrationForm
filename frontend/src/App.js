@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
-import Form from './form'
+import Register from './register';
+import Login from './login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export default function App() {
@@ -9,7 +10,9 @@ export default function App() {
       <BrowserRouter>
      
         <Routes>
-          <Route path='/' element={<Form/>}/>
+          <Route path='/' element={<Register/>}/>
+          <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login/>}/>
         </Routes>
       </BrowserRouter>
       

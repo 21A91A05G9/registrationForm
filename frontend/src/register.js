@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
-export default function Form() {
+import {Link,useNavigate} from 'react-router-dom'
+export default function Register() {
+    const nav = useNavigate()
     const [formdata,setFormdata] = useState(
         {
             name:'',
@@ -12,20 +13,13 @@ export default function Form() {
     )
     const  handleReg = (e) => {
         e.preventDefault(); 
-       
-        // var newPassword = formdata.password
-        // var minNumberofChars = 6;
-        // var maxNumberofChars = 16;
-        // var regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/; 
-        // if(newPassword.length < minNumberofChars) alert("Minimum 6 characters")
-        // else if (newPassword.length > maxNumberofChars) alert("Maximum 16 charaters")
-        
-        // else if(!regularExpression.test(newPassword)) {
-        //     alert("password should contain atleast one number and one special character");
+        axios.post('http://localhost:5001/register',formdata).then((res)=>{
+                alert(res.data.msg)
+                
+                if(res.data.msg==='successfully registered'){
+                    nav('/login/')
+                }
             
-        // }
-        
-        axios.post('http://localhost:5001/register',formdata).then(()=>{
         console.log(formdata)
         }) 
     }
@@ -58,14 +52,14 @@ export default function Form() {
                     </div>
                 </div>
                
-                <div className="row mb-3">
+                <div className="row mb-4">
                  
                     <div className="col-sm-12">
                     <input type="password" id="inputPassword3"  placeholder="Password"  onChange={(e)=>setFormdata({...formdata,password:e.target.value})}/>
                     </div>
                 </div>
-                <div className='text-center mb-4'><button  className="btn btn-light btn-sm" >Register</button></div>   
-                <div className='text-center mt-2'><p>Already have an account? <Link to='/'>Login</Link></p></div>
+                <div className='text-center mb-2'><button  className="btn btn-light btn-sm" >Register</button></div>   
+                <div className='text-center mt-1'><p>Already have an account? <Link to='/login'>Login</Link></p></div>
 
                 </form>
                
